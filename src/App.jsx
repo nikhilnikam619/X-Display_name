@@ -10,33 +10,34 @@ function App() {
   const [last,setLast]=useState("")
 
   return (
-    <>
+  
       <div>
-      <h1>Full Name Display</h1>
+  
         <form action="" onSubmit={(e)=>{
           e.preventDefault()
          
           setFirst(e.target[0].value)
           setLast(e.target[1].value)
         }}>
+              <h1>Full Name Display</h1>
           <label htmlFor="">First Name : <input required type="text" onChange={()=>{
-            setFirst("")
-             setLast("")
+           // setFirst("")
+             //setLast("")
           }}/></label><br />
           <br />
           <label htmlFor="">Last Name :  <input required type="text" onChange={()=>{
             
-            setLast("")
+           // setLast("")
           }}/></label><br />
           <br />
-          <button>Submit</button>
+          <button type='submit' data-testid="submit-btn">Submit</button>
           {last&&<p>Full Name :{first} {last}</p>}
 
 
         </form>
       </div>
       
-    </>
+   
   )
 }
 
