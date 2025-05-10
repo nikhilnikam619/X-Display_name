@@ -33,9 +33,11 @@ function App() {
           <button type='submit' data-testid="submit-btn">Submit</button>
          
 
-         {last&&<p>Full Name :{first} {last}</p>}
+         
 
         </form>
+
+        {last&&<p>Full Name :{first} {last}</p>}
 
       </div>
       
