@@ -43,54 +43,59 @@
 
 
 
-import { useState } from 'react';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
 
 function App() {
-  const [first, setFirst] = useState('');
-  const [last, setLast] = useState('');
+  const [first, setFirst] = useState("")
+  const [last, setLast] = useState("")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const firstName = e.target[0].value
+    const lastName = e.target[1].value
+    setFirst(firstName)
+    setLast(lastName)
+  }
 
   return (
     <div>
-      <form
-        action=""
-        onSubmit={(e) => {
-          e.preventDefault();
-          setFirst(e.target[0].value);
-          setLast(e.target[1].value);
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <h1>Full Name Display</h1>
-        <label htmlFor="">
-          First Name :
+
+        <label>
+          First Name :{" "}
           <input
             required
             type="text"
-            value={first}  // Use value instead of defaultValue
-            onChange={(e) => setFirst(e.target.value)}  // Sync the input value with the state
+            defaultValue={first}
+            onChange={(e) => setFirst(e.target.value)}
           />
         </label>
         <br />
         <br />
-        <label htmlFor="">
-          Last Name :
+
+        <label>
+          Last Name :{" "}
           <input
             required
             type="text"
-            value={last}  // Use value instead of defaultValue
-            onChange={(e) => setLast(e.target.value)}  // Sync the input value with the state
+            defaultValue={last}
+            onChange={(e) => setLast(e.target.value)}
           />
         </label>
         <br />
         <br />
+
         <button type="submit" data-testid="submit-btn">
           Submit
         </button>
       </form>
 
-      {first && last && <p>Full Name : {first} {last}</p>}
+      {/* This will ensure the Full Name is displayed after the form is submitted */}
+      {first && last && <p>Full Name: {first} {last}</p>}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
