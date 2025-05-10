@@ -37,7 +37,7 @@ function App() {
 
         </form>
 
-        {last&&<p>Full Name :{first} {last}</p>}
+        {last&&<p>Full Name : {first} {last}</p>}
 
       </div>
       
