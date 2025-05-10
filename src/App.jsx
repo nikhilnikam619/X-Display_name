@@ -20,9 +20,9 @@ function App() {
           setLast(e.target[1].value)
         }}>
               <h1>Full Name Display</h1>
-          <label htmlFor="">First Name : <input required type="text" defaultValue={first} onChange={(e) => setFirst(e.target.value)}/></label><br />
+          <label htmlFor="">First Name : <input required type="text" value={first} onChange={(e) => setFirst(e.target.value)}/></label><br />
           <br />
-          <label htmlFor="">Last Name :  <input required type="text" defaultValue={last} onChange={(e) => setLast(e.target.value)}/></label><br />
+          <label htmlFor="">Last Name :  <input required type="text" value={last} onChange={(e) => setLast(e.target.value)}/></label><br />
           <br />
           <button type='submit' data-testid="submit-btn">Submit</button>
          
